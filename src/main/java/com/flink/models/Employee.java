@@ -1,13 +1,20 @@
 package com.flink.models;
 
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.io.Serializable;
 
 
 @Data
 @Document(collection = "employees")
-public class Employee {
+@NoArgsConstructor
+@AllArgsConstructor
+public class Employee implements Serializable {
     private String id;
     private String name;
     private int age;
@@ -17,13 +24,4 @@ public class Employee {
     private String hireDate;
     private String email;
     private Address address;
-
-
-    @Data
-    public static class Address {
-        private String street;
-        private String city;
-        private String state;
-        private String zip;
-    }
 }
