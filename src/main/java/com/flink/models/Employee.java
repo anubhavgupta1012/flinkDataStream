@@ -12,8 +12,8 @@ import java.io.Serializable;
 
 @Data
 @Document(collection = "employees")
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class Employee implements Serializable {
     private String id;
     private String name;
